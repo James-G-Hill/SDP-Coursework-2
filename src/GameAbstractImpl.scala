@@ -8,6 +8,9 @@ abstract class GameAbstractImpl extends Game {
     *             revealed at all times when playing the game. If easy is
     *             false the secret code is not revealed until correctly guessed
     *             or the player runs out of turns.
+    *             
+    *             
+    *             Edited by James
     */
   def this(easy: Boolean) {
     this()
