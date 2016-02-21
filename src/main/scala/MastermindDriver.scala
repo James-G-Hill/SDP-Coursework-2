@@ -6,15 +6,15 @@ object MastermindDriver {
   def main(args: Array[String]) {
     
     if(args(1).equals(easy)){
-      
+
       // Run easy game 
-      var g: Game = Factory.getInstance(classOf[Game], true)
+      val g: Game = Factory.getInstance(classOf[Game], b = true)
       g.runGames
       
     } else if (args.isEmpty) {
       
       // Run hard game
-      var g: Game = Factory.getInstance(classOf[Game], false)
+      val g: Game = Factory.getInstance(classOf[Game], b = false)
       g.runGames
       
     } else {

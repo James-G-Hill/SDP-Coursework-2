@@ -1,7 +1,7 @@
 package main.scala.Traits
 
 
-trait SecretCode {
+trait SecretCode extends ColourSet {
 
   def secretCode: ColourSet
 
