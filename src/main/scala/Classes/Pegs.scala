@@ -1,14 +1,14 @@
 package main.scala.Classes
 
-abstract class Pegs {
+abstract sealed class Pegs {
 
   val colour:String
 
 }
 
-case class blackPeg(colour: String = "black") extends Pegs
+case class BlackPeg(colour: String = "Black") extends Pegs
 
-case class whitePeg(colour: String = "white") extends Pegs
+case class WhitePeg(colour: String = "White") extends Pegs
 
 
 
