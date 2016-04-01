@@ -29,8 +29,12 @@ abstract class GameAbstractImpl extends Game {
   
 }
 
-class NewGame(b: Boolean) extends GameAbstractImpl {
+class NewGame(showCode: Boolean) extends GameAbstractImpl {
   
-  def allColours(colours: ValidColours): ValidColours = {}
+  var allColours: Traits.ValidColours
+  
+  var codeSize: Int = 1
+  
+  def runGames = {}
   
 }
