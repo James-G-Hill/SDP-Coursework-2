@@ -1,4 +1,4 @@
-package main.scala.Traits
+package Traits
 
 trait Guesses extends ColourSet{
 

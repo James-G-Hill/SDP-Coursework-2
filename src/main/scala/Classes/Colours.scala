@@ -1,4 +1,4 @@
-package main.scala.Classes
+package Classes
 
 abstract class Colours {
 

@@ -1,4 +1,4 @@
-package main.scala.Classes
+package Classes
 
 abstract sealed class Pegs {
 
@@ -9,6 +9,3 @@ abstract sealed class Pegs {
 case class BlackPeg(colour: String = "Black") extends Pegs
 
 case class WhitePeg(colour: String = "White") extends Pegs
-
-
-

@@ -1,6 +1,6 @@
-package main.scala.Traits
+package Traits
 
-import main.scala.Classes.Pegs
+import Classes.Pegs
 
 trait Feedback {
 

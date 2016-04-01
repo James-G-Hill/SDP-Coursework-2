@@ -1,7 +1,6 @@
-package main.scala.Traits
+package Traits
 
-import main.scala.Classes.Colours
-
+import Classes.Colours
 
 trait ValidColours {
 

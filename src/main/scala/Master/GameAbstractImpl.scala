@@ -1,5 +1,7 @@
 package Master
 
+import Traits.ValidColours
+
 abstract class GameAbstractImpl extends Game {
   
   private var showCode: Boolean = false
@@ -13,6 +15,11 @@ abstract class GameAbstractImpl extends Game {
     *             or the player runs out of turns.
     *             
     */
+  
+  var codeSize: Int
+
+  var allColours: ValidColours
+  
   def this(easy: Boolean) {
     
     this()
@@ -24,6 +31,6 @@ abstract class GameAbstractImpl extends Game {
 
 class NewGame(b: Boolean) extends GameAbstractImpl {
   
-  
+  def allColours(colours: ValidColours): ValidColours = {}
   
 }
