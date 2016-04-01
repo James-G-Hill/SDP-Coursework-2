@@ -11,6 +11,7 @@ object Build extends sbt.Build {
   lazy val root = Project("SampleProject", file("."))
     .settings(basicSettings: _*)
     .settings(libraryDependencies ++= Dependencies.basic)
+    .settings(libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % Test)
 
   lazy val basicSettings = Seq(
     organization := "your.organization",

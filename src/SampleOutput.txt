@@ -1,3 +1,5 @@
+
+
 Welcome to Mastermind.
 
 This is a text version of the classic board game Mastermind.
