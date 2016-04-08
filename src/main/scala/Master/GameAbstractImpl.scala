@@ -1,11 +1,12 @@
 package Master
 
+import Traits.BoardImpl
 import Traits.ValidColours
 
 abstract class GameAbstractImpl extends Game {
-  
+
   private var showCode: Boolean = false
-  
+
   /**
     * Create a Game object.
     *
@@ -13,28 +14,35 @@ abstract class GameAbstractImpl extends Game {
     *             revealed at all times when playing the game. If easy is
     *             false the secret code is not revealed until correctly guessed
     *             or the player runs out of turns.
-    *             
+    *
     */
-  
+
   var codeSize: Int
 
   var allColours: ValidColours
-  
+
   def this(easy: Boolean) {
-    
+
     this()
     showCode = easy
-  
+
   }
-  
+
 }
 
 class NewGame(showCode: Boolean) extends GameAbstractImpl {
-  
-  var allColours: Traits.ValidColours
-  
+
+  var allColours: Traits.ValidColours = null
   var codeSize: Int = 1
-  
-  def runGames = {}
-  
+
+  def runGames = {
+    startUp
+  }
+
+  def startUp = {
+
+    val board = Factory.getInstanceBoard(classOf[BoardImpl])
+
+  }
+
 }
