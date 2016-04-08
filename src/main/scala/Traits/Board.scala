@@ -1,4 +1,5 @@
 package Traits
+
 /**
 @return board: the game board
   **/
@@ -6,9 +7,9 @@ trait Board {
 
   val size = 12
 
-  def ballArray : Array[String]
+  def colourArray : Array[Guesses]
 
-  def pegArray : Array[String]
+  def pegArray : Array[PegSet]
 
   def getBoard()
 
