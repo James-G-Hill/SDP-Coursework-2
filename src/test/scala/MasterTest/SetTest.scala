@@ -1,10 +1,10 @@
 import Traits.AbstractSet
 import Traits.ColourSet
-
-import org.scalatest.junit._
-import org.scalatest._
+import org.junit.runner.RunWith
+import org.scalatest.junit.JUnitRunner
 import org.scalatest.FunSuite
 
+@RunWith(classOf[JUnitRunner])
 class SetTest extends FunSuite {
 
   val size = 4
