@@ -1,9 +1,9 @@
-import org.junit._
-import org.junit.runner._
+import Traits.AbstractSet
+import Traits.ColourSet
+
 import org.scalatest.junit._
 import org.scalatest._
 import org.scalatest.FunSuite
-import Assert._
 
 class SetTest extends FunSuite {
 
