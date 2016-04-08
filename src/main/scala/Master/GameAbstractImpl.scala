@@ -16,10 +16,9 @@ abstract class GameAbstractImpl extends Game {
     *             or the player runs out of turns.
     *
     */
-
   var codeSize: Int
 
-  var allColours: ValidColours
+  val allColours: ValidColours
 
   def this(easy: Boolean) {
 
@@ -31,8 +30,7 @@ abstract class GameAbstractImpl extends Game {
 }
 
 class NewGame(showCode: Boolean) extends GameAbstractImpl {
-
-  var allColours: Traits.ValidColours = null
+  
   var codeSize: Int = 1
 
   def runGames = {
@@ -40,7 +38,7 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
   }
 
   def startUp = {
-
+    
     val board = Factory.getInstanceBoard(classOf[BoardImpl])
 
   }
