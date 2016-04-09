@@ -47,9 +47,7 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
   }
 
   def startUp = {
-    
     val board = Factory.getInstanceBoard(classOf[BoardImpl])
-
   }
 
 }
