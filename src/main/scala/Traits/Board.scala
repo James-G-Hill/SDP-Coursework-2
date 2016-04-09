@@ -7,7 +7,7 @@ trait Board {
 
   val size = 12
   
-  def addRow()
+  def addRow(cs: ColourSet)
   def getBoard()
   def colourArray : Array[Guesses]
   def pegArray : Array[PegSet]
