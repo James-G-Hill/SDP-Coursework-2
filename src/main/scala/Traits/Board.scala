@@ -16,7 +16,9 @@ trait Board {
 
 class BoardImpl extends Board {
   
-  def addRow() = {}
+  def addRow(cs: ColourSet) = {
+    
+  }
   
   def getBoard() = {}
   
