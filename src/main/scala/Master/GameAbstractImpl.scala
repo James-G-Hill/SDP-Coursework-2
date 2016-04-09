@@ -1,6 +1,8 @@
 package Master
 
 import Traits.BoardImpl
+import Traits.SecretCode
+import Traits.SecretCodeImpl
 import Traits.ValidColours
 import Traits.ValidColoursImpl
 
@@ -33,6 +35,10 @@ abstract class GameAbstractImpl extends Game {
 class NewGame(showCode: Boolean) extends GameAbstractImpl {
   
   var codeSize: Int = 1
+  
+  val secretCode: SecretCode = {
+    new SecretCodeImpl(codeSize)
+  }
   
   override val gameColours: ValidColours = {ValidColoursImpl}
   
