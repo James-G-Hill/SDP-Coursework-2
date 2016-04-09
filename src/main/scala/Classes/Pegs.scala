@@ -1,11 +1,16 @@
 package Classes
 
-abstract sealed class Pegs {
+sealed trait Pegs {
 
-  val colour:String
+  def apply(colour:String) = colour match{
+    case "Black"  => BlackPeg
+    case "White" => WhitePeg
+  }
 
 }
 
-case class BlackPeg(colour: String = "Black") extends Pegs
 
-case class WhitePeg(colour: String = "White") extends Pegs
+
+final case class BlackPeg(colour: String = "Black") extends Pegs
+
+final case class WhitePeg(colour: String = "White") extends Pegs
