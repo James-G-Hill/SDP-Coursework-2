@@ -49,14 +49,14 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
     code + " Secret Code\n"
   }
 
-  def printBoard (board : Board) = {
+  def printBoard (board : Board, turn: Int) = {
     
     val colourArray = board.colourArray
     val output = ""
     val pegArray = board.pegArray
     
     for(i <- 0 to board.size){
-      if (board.turn >= i){
+      if (turn >= i){
         output + colourArray(i).toString
         output + " Result: " +
         output + pegArray(i).toString
