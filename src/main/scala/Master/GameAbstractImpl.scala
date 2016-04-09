@@ -50,8 +50,9 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
       
       val guessInput = printer.getGuess
       val guess = new ColourSet(guessInput)
+      board.addRow(guess)
       
-      print(printer.printBoard(board))
+      print(printer.printBoard(board, turn))
       
       // Check win or lose.
       if(guess == secretCode) {
