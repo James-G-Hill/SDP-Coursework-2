@@ -10,7 +10,7 @@ trait ValidColours {
 
 object ValidColoursImpl extends ValidColours {
   
-  def allColours: Array[Colours] = {
+  val allColours: Array[Colours] = {
     
     new Array[Colours](1)
     
