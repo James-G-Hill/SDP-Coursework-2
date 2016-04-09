@@ -27,6 +27,6 @@ class SecretCodeImpl(codeSize: Int) extends SecretCode {
     
   }
   
-  override def getCode: ColourSet = {theCode}
+  override def getCode: ColourSet = theCode
   
 }
