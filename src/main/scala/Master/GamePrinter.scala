@@ -49,5 +49,45 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
       "Enter guess:"
   }
 
+  def codePrint (code:String) ={
+    code+" Secret Code\n"
+  }
+
+  def printBoard (board : BoardImpl) ={
+    var i = 0
+
+    val colourArray = board.colourArray
+
+    val pegArray = board.pegArray
+
+    val output = ""
+
+    for(i <- board.size){
+      if (board.turn >= i){
+//        colourArray.foreach(i => output + colourArray.mkString(" "))
+        output + colourArray(i).toString
+        output +" Result: "+
+//        pegArray.foreach(i => output + pegArray.mkString(" "))+"\n"
+        output +  pegArray(i).toString
+      }else{
+        output + "....\n"
+      }
+
+    }
+  }
+
+  def wrong(board : BoardImpl) ={
+    "You have " +(board.size-board.turn) + "guesses left\n\n"
+  }
+
+  def loser ={
+    "You did not solve the puzzle. Too bad.\n" +
+      "Enter Y for another game or anything else to quit: n"
+  }
+
+  def winner ={
+    "You solved the puzzle! Good job.\n" +
+      "Enter Y for another game or anything else to quit: k\n"
+  }
 
 }

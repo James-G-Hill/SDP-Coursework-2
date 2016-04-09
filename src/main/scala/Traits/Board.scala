@@ -15,6 +15,8 @@ trait Board {
 
   def addRow()
 
+  var turn = 0
+
 }
 
 class BoardImpl extends Board {
@@ -25,6 +27,8 @@ class BoardImpl extends Board {
 
   def getBoard() = {}
 
-  def addRow() = {}
+  def addRow() = {
+    turn = turn+1
+  }
 
 }
