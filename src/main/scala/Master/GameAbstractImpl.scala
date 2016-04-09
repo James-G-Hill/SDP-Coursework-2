@@ -39,7 +39,6 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
   var codeSize: Int = 1
   val board = Factory.getInstanceBoard(classOf[BoardImpl])
   val secretCode: SecretCode = {new SecretCodeImpl(codeSize)}
-
   def runGames = {}
 
 }
