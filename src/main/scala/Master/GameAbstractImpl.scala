@@ -2,6 +2,7 @@ package Master
 
 import Traits.BoardImpl
 import Traits.ValidColours
+import Traits.ValidColoursImpl
 
 abstract class GameAbstractImpl extends Game {
 
@@ -18,7 +19,7 @@ abstract class GameAbstractImpl extends Game {
     */
   var codeSize: Int
 
-  val allColours: ValidColours
+  val gameColours: ValidColours
 
   def this(easy: Boolean) {
 
@@ -32,7 +33,9 @@ abstract class GameAbstractImpl extends Game {
 class NewGame(showCode: Boolean) extends GameAbstractImpl {
   
   var codeSize: Int = 1
-
+  
+  override val gameColours: ValidColours = {ValidColoursImpl}
+  
   def runGames = {
     startUp
   }
