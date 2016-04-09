@@ -34,13 +34,12 @@ abstract class GameAbstractImpl extends Game {
 
 class NewGame(showCode: Boolean) extends GameAbstractImpl {
   
-  override val gameColours: ValidColours = {ValidColoursImpl}
-  
+  override val gameColours: ValidColours = ValidColoursImpl
+
+  var codeSize: Int = 1
   val board = Factory.getInstanceBoard(classOf[BoardImpl])
   val secretCode: SecretCode = {new SecretCodeImpl(codeSize)}
-  
-  var codeSize: Int = 1
-  
+
   def runGames = {}
 
 }
