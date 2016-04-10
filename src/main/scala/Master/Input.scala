@@ -3,7 +3,8 @@ package Master
 object Input {
   
   def getGuess: String = {
-    scala.io.StdIn.readLine()
+    val s: String = scala.io.StdIn.readLine()
+    s
   }
   
 }
