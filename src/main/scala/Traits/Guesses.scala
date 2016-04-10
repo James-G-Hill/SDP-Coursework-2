@@ -6,6 +6,8 @@ trait Guesses {
   
   def getGuess(): ColourSet
   
+  def correctGuess(secret: SecretCode): Boolean
+  
 }
 
 class GuessesImpl(s: String) extends Guesses {
@@ -16,4 +18,14 @@ class GuessesImpl(s: String) extends Guesses {
   
   override def getGuess(): ColourSet = guess
 
+  override def correctGuess(secret: SecretCode): Boolean = {
+    var correct = true
+    for(i <- 0 to s.length - 1){
+      if(guess.colours(i) != secret.getCode.colours(i)){
+        correct = false
+      }
+    }
+    correct
+  }
+  
 }
