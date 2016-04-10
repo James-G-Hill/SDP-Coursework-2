@@ -15,14 +15,12 @@ class SecretCodeImpl(codeSize: Int) extends SecretCode {
     var s = ""
     val vc = ValidColoursImpl.allColours
     
-    var a = 0
-    for(a <- 1 to codeSize) {
-      
+    for(a <- 0 to codeSize) {  
       val r = new Random(System.currentTimeMillis())
-      val index = r.nextInt(vc.length)
-      s = s + vc(index).code
+      val values = vc.values.toArray
+      s = s + values(r.nextInt(values.size))
     }
-    
+    println(s)
     new ColourSet(s)
     
   }
