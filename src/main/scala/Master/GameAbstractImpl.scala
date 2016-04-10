@@ -1,6 +1,6 @@
 package Master
 
-import Traits.{BoardImpl, ColourSet, SecretCode, SecretCodeImpl, ValidColours, ValidColoursImpl}
+import Traits.{BoardImpl, ColourSet, SecretCode, SecretCodeImpl, ValidColours, ValidColoursImpl, GuessesImpl, Guesses, PegSet}
 
 abstract class GameAbstractImpl extends Game {
 
@@ -32,7 +32,7 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
 
   val factory = Factory.getBeanFactory
   
-  var turn = 1
+  var turn = 0
   var finished: Boolean = false
   
   val board = Factory.getInstanceBoard(classOf[BoardImpl])
@@ -49,14 +49,15 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
     // Play turns of the game.
     while(!finished) {
       
-      val guessInput = printer.getGuess
-      val guess = new ColourSet(guessInput)
-      board.addRow(guess)
+      print(printer.getGuess)
+      val guessInput: String = Input.getGuess
+      val guess: Guesses = new GuessesImpl(guessInput)
+      board.addRow(guess, new PegSet(secretCode, guess))
       
       print(printer.printBoard(board, turn))
       
       // Check win or lose.
-      if(guess == secretCode.getCode) {
+      if(guess.getGuess == secretCode.getCode) {
         
         finished = true
         print(printer.winner)
