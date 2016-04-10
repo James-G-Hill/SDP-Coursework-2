@@ -52,7 +52,7 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
       print(printer.getGuess)
       val guessInput: String = Input.getGuess
       val guess: Guesses = new GuessesImpl(guessInput)
-      board.addRow(guess, new PegSet(secretCode, guess))
+      board.addRow(guess, new PegSet(codeSize, secretCode, guess))
       
       print(printer.printBoard(board, turn))
       
