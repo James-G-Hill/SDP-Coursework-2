@@ -1,17 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-
-    <!--<bean id="colour" class="main.scala.Classes.Colours" abstract="true">-->
-        <!--<property name="colour"-->
-                  <!--ref=""/>-->
-    <!--</bean>-->
-
-    <!--<bean id="" class="">-->
-        <!--<constructor-arg>-->
-            <!--<value>Hi I'm a beasn</value>-->
-        <!--</constructor-arg>-->
-    <!--</bean>-->
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    
+    <bean id="codeSize" class="java.lang.Integer">
+        <property name="size" value="4"</property>
+    </bean>
+    
+    <bean id="A" class="Classes.Colours">
+        <constructor-arg index="0" value="A"/>
+        <constructor-arg index="1" value="Amber"/>
+    </bean>
+    
+    <bean id="B" class="Classes.Colours">
+        <constructor-arg index="0" value="B"/>
+        <constructor-arg index="1" value="Blue"/>
+    </bean>
+    
+    <bean id="C" class="Classes.Colours">
+        <constructor-arg index="0" value="C"/>
+        <constructor-arg index="1" value="Claret"/>
+    </bean>
+    
+    <bean id="D" class="Classes.Colours">
+        <constructor-arg index="0" value="D"/>
+        <constructor-arg index="1" value="Denim"/>
+    </bean>
+    
+    <bean id="E" class="Classes.Colours">
+        <constructor-arg index="0" value="E"/>
+        <constructor-arg index="1" value="Eggshell"/>
+    </bean>
+    
+    <bean id="F" class="Classes.Colours">
+        <constructor-arg index="0" value="F"/>
+        <constructor-arg index="1" value="Fulvous"/>
+    </bean>
+    
 </beans>
