@@ -31,18 +31,18 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
     s
   }
 
-  def secretPrint(code:String) = {
+  def secretPrint(code: String) = {
     "The secret code is " + code + ".\n\n"
   }
 
   def guessPrint(n: Int) = {
-    "You have " + n + " guesses left . . .\n"
+    "You have " + n + " guesses left . . .\n\n"
   }
 
   def getGuess = {
     "What is your next guess?\n" +
-      "Type in the characters for your guess and press enter.\n" +
-      "Enter guess:"
+    "Type in the characters for your guess and press enter.\n" +
+    "Enter guess:"
   }
 
   def codePrint (code:String) = {
