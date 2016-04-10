@@ -1,7 +1,9 @@
 package Traits
 
+import Classes.BlackPeg
 import Classes.Colours
 import Classes.Pegs
+import Classes.WhitePeg
 
 /**
  * An abstract set.
@@ -21,15 +23,30 @@ class ColourSet(s: String) extends AbstractSet {
     array
   }
   
+  override def toString = {
+    colours.toString
+  }
+  
 }
 
 /**
  * A set holding an array of pegs.
  */
-class PegSet(size: Int, secret: SecretCode, cs: ColourSet) extends AbstractSet {
+class PegSet(secret: SecretCode, guess: Guesses) extends AbstractSet {
   
   val pegs: Array[Pegs] = {
-    new Array(size)
+    
+    val length = secret.toString.length
+    val pSet = new Array[Pegs](length)
+    
+    for(i <- 0 to length - 1){
+      if(secret.getCode.colours(i) == guess.getGuess.colours(i)){
+        pSet(i) = new WhitePeg
+      } else {
+        pSet(i) = new BlackPeg
+      }
+    }
+    pSet
   }
   
 }
