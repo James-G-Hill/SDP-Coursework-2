@@ -2,8 +2,12 @@ package Master
 
 object Input {
   
-  def getGuess: String = {
-    val s: String = scala.io.StdIn.readLine()
+  def getGuess(codeSize: Int): String = {
+    var s: String = scala.io.StdIn.readLine()
+    while(s.length != codeSize){
+      println("Code is wrong length . . . please try again.\n")
+      s = scala.io.StdIn.readLine()
+    }
     s
   }
   
