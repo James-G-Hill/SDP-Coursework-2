@@ -1,9 +1,19 @@
 package Traits
 
-trait Guesses extends ColourSet{
+trait Guesses {
+  
+  val guess: ColourSet
+  
+  def getGuess(): ColourSet
+  
+}
 
-  def guess: ColourSet
+class GuessesImpl(s: String) extends Guesses {
 
-  def getGuess()
+  val guess = {
+    new ColourSet(s)
+  }
+  
+  override def getGuess(): ColourSet = guess
 
 }
