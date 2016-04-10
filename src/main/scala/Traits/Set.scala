@@ -42,10 +42,16 @@ class PegSet(codeSize: Int, secret: SecretCode, guess: Guesses) extends Abstract
     
     val pSet = new Array[Pegs](codeSize)
     
-    println("Now here " + secret.toString)
+    var correct = 0
     
     for(i <- 0 to codeSize - 1){
       if(secret.getCode.colours(i) == guess.getGuess.colours(i)){
+        correct = correct + 1
+      }
+    }
+    
+    for(i <- 0 to codeSize - 1){
+      if(i < correct){
         pSet(i) = new WhitePeg
       } else {
         pSet(i) = new BlackPeg
