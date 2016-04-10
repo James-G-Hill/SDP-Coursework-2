@@ -28,4 +28,13 @@ object ValidColoursImpl extends ValidColours {
     allColours get char.toString
   }
   
+  def checkColours(s: String): Boolean = {
+    var valid = true
+    for(i <- 0 to s.length - 1) {
+      if(!allColours.containsKey(s.charAt(i).toString)){
+        valid = false
+      }
+    }
+    valid
+  }
 }
