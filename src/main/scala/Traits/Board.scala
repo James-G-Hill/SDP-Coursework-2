@@ -3,27 +3,31 @@ package Traits
 /**
   @return board: the game board
 **/
+import Classes.Pegs
+
 trait Board {
 
+  var currentRow = 0
+  
   val size = 12
   
-  def addRow(cs: ColourSet)
+  def addRow(guess: Guesses, p: PegSet)
   def getBoard()
-  def colourArray : Array[Guesses]
-  def pegArray : Array[PegSet]
+  val colourArray : Array[Guesses]
+  val pegArray : Array[PegSet]
   
 }
 
 class BoardImpl extends Board {
   
-  def addRow(cs: ColourSet) = {
-    
+  override val colourArray: Array[Guesses] = {new Array[Guesses](12)}
+  override val pegArray: Array[PegSet] = {new Array[PegSet](12)}
+  
+  override def addRow(guess: Guesses, p: PegSet) = {
+    colourArray(currentRow) = guess
+    pegArray(currentRow) = p
   }
   
-  def getBoard() = {}
-  
-  def colourArray: Array[Guesses] = {new Array[Guesses](1)}
-  
-  def pegArray: Array[PegSet] = {new Array[PegSet](1)}
+  override def getBoard() = {}
   
 }
