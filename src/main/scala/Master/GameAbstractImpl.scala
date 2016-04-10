@@ -15,7 +15,7 @@ abstract class GameAbstractImpl extends Game {
     *             or the player runs out of turns.
     *
     */
-  var codeSize: Int
+  var codeSize: Int = Factory.getBeanFactory.getBean("codeSize").asInstanceOf[Int]
 
   val gameColours: ValidColours
 
@@ -30,12 +30,12 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
   
   override val gameColours: ValidColours = ValidColoursImpl
 
+  val factory = Factory.getBeanFactory
+  
   var turn = 1
-  var codeSize: Int = 1
   var finished: Boolean = false
   
   val board = Factory.getInstanceBoard(classOf[BoardImpl])
-  //colour genesis
   val secretCode: SecretCode = {new SecretCodeImpl(codeSize)}
   
   def runGames = {
@@ -56,7 +56,7 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
       print(printer.printBoard(board, turn))
       
       // Check win or lose.
-      if(guess == secretCode) {
+      if(guess == secretCode.getCode) {
         
         finished = true
         print(printer.winner)
@@ -72,9 +72,6 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
         }
         
       }
-      
     }
-    
-  }
-
+  }  
 }
