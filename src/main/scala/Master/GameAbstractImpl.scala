@@ -50,14 +50,14 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
     while(!finished) {
       
       print(printer.getGuess)
-      val guessInput: String = Input.getGuess
+      val guessInput: String = Input.getGuess(codeSize)
       val guess: Guesses = new GuessesImpl(guessInput)
       board.addRow(guess, new PegSet(codeSize, secretCode, guess))
       
       print(printer.printBoard(board, turn))
       
       // Check win or lose.
-      if(guess.getGuess == secretCode.getCode) {
+      if(guess.correctGuess(secretCode)) {
         
         finished = true
         print(printer.winner)
