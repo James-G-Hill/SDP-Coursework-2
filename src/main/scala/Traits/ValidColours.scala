@@ -4,7 +4,7 @@ import Classes.Colours
 import Master.Factory
 import java.util.HashMap
 
-trait ValidColours {}
+trait ValidColours {val allColours: HashMap[String, Colours]}
 
 object ValidColoursImpl extends ValidColours {
   
