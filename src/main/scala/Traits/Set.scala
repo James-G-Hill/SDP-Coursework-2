@@ -15,8 +15,7 @@ class ColourSet(s: String) extends AbstractSet {
 
   val colours: Array[Colours] = {
     val array = new Array[Colours](s.length)
-    var i = 0
-    for(i <- 0 to array.length){
+    for(i <- 0 to array.length - 1){
       array(i) = ValidColoursImpl.getColours(s.charAt(i))
     }
     array
