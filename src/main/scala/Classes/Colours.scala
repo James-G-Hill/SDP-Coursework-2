@@ -1,3 +1,3 @@
 package Classes
 
-class Colours(code: Char, desc: String) {}
+case class Colours(code: Char, desc: String) {}
