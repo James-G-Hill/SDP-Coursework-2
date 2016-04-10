@@ -10,20 +10,33 @@ For a full description of how the game works, please see: https://en.wikipedia.o
 
 This project require STB to run and the following library dependencies:
 
-*commoms-logging-1.2.jar
-*commoms-logging-1.2-javadoc.jar
-*junit.jar
-*junit-4.12.jar
-*scalatest_2.11-2.2.6.jar
-*scalatest_2.11-2.2.6-javadoc.jar
-*spring-beans-4.2.5.RELEASE.jar
-*spring-beans-4.2.5.RELEASE-javadoc.jar
-*spring-context-4.2.5.RELEASE.jar
-*spring-context-4.2.5/.RELEASE-javadoc.jar
-*spring-core-4.2.5.RELEASE.jar
-*spring-core-4.2.5.RELEASE-javadoc.jar
-*spring-expression-4.2.5.RELEASE.jar
-*spring-expression-4.2.5.RELEASE-javadoc.jar
+-commoms-logging-1.2.jar
+
+-commoms-logging-1.2-javadoc.jar
+
+-junit.jar
+
+-junit-4.12.jar
+
+-scalatest_2.11-2.2.6.jar
+
+-scalatest_2.11-2.2.6-javadoc.jar
+
+-spring-beans-4.2.5.RELEASE.jar
+
+-spring-beans-4.2.5.RELEASE-javadoc.jar
+
+-spring-context-4.2.5.RELEASE.jar
+
+-spring-context-4.2.5/.RELEASE-javadoc.jar
+
+-spring-core-4.2.5.RELEASE.jar
+
+-spring-core-4.2.5.RELEASE-javadoc.jar
+
+-spring-expression-4.2.5.RELEASE.jar
+
+-spring-expression-4.2.5.RELEASE-javadoc.jar
 
 Full coursework specification can be found at: http://ehshan.com/sdp/mastermind.pdf
 
