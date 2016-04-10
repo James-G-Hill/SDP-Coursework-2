@@ -7,17 +7,17 @@ object MastermindDriver {
   
   def main(args: Array[String]) {
     
-    if(args(1).equals(easy)){
+    if(!args.isEmpty && args(0).equals(easy)){
 
       // Run easy game 
-      val g: Game = Factory.getInstance(classOf[Game], b = true)
-      g.runGames
+      val g = Factory.getInstance(classOf[NewGame], b = true)
+      g.asInstanceOf[Game].runGames
       
     } else if (args.isEmpty) {
       
       // Run hard game
-      val g: Game = Factory.getInstance(classOf[Game], b = false)
-      g.runGames
+      val g = Factory.getInstance(classOf[NewGame], b = false)
+      g.asInstanceOf[Game].runGames
       
     } else {
       
@@ -25,7 +25,5 @@ object MastermindDriver {
       println(errorMessage)
       
     }
-    
   }
-  
 }
