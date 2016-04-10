@@ -1,5 +1,6 @@
 package Traits
 
+import Classes.Colours
 import scala.util.Random
 
 trait SecretCode {
@@ -18,13 +19,19 @@ class SecretCodeImpl(codeSize: Int) extends SecretCode {
     for(a <- 0 to codeSize) {  
       val r = new Random(System.currentTimeMillis())
       val values = vc.values.toArray
-      s = s + values(r.nextInt(values.size))
+      s = s + values(r.nextInt(values.size)).asInstanceOf[Colours].code
     }
-    println(s)
     new ColourSet(s)
-    
   }
   
   override def getCode: ColourSet = theCode
+  
+  override def toString = {
+    var s: String = ""
+    for(i <- 0 to theCode.colours.length - 1){
+      s = s + theCode.colours(i) + " "
+    }
+    s
+  }
   
 }
