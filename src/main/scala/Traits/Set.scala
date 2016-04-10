@@ -14,10 +14,10 @@ trait AbstractSet {}
 class ColourSet(s: String) extends AbstractSet {
 
   val colours: Array[Colours] = {
-    val array = new Array(s.length)
+    val array = new Array[Colours](s.length)
     var i = 0
     for(i <- 0 to array.length){
-      array(i) = new Colours(s.charAt(i))
+      array(i) = ValidColoursImpl.getColours(s.charAt(i))
     }
     array
   }
