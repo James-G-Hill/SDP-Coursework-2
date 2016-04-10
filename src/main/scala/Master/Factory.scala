@@ -19,7 +19,7 @@ object Factory {
   }
   
   def getBeanFactory = {
-    val factory: BeanFactory = new ClassPathXmlApplicationContext("file:src/main/validColours.xml")
+    val factory: BeanFactory = new ClassPathXmlApplicationContext("file:src/main/beans.xml")
     factory
   }
   
