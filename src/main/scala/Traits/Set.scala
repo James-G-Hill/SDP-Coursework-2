@@ -24,7 +24,11 @@ class ColourSet(s: String) extends AbstractSet {
   }
   
   override def toString = {
-    colours.toString
+    var s: String = ""
+    for(i <- 0 to colours.length - 1){
+      s = s + colours(i).toString + " "
+    }
+    s
   }
   
 }
@@ -32,14 +36,15 @@ class ColourSet(s: String) extends AbstractSet {
 /**
  * A set holding an array of pegs.
  */
-class PegSet(secret: SecretCode, guess: Guesses) extends AbstractSet {
+class PegSet(codeSize: Int, secret: SecretCode, guess: Guesses) extends AbstractSet {
   
   val pegs: Array[Pegs] = {
     
-    val length = secret.toString.length
-    val pSet = new Array[Pegs](length)
+    val pSet = new Array[Pegs](codeSize)
     
-    for(i <- 0 to length - 1){
+    println("Now here " + secret.toString)
+    
+    for(i <- 0 to codeSize - 1){
       if(secret.getCode.colours(i) == guess.getGuess.colours(i)){
         pSet(i) = new WhitePeg
       } else {
@@ -47,6 +52,14 @@ class PegSet(secret: SecretCode, guess: Guesses) extends AbstractSet {
       }
     }
     pSet
+  }
+  
+  override def toString: String = {
+    var s: String = ""
+    for(i <- 0 to pegs.length - 1){
+      s = s + pegs(i).colour + " "
+    }
+    s
   }
   
 }
