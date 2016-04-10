@@ -1,11 +1,8 @@
 package Classes
 
-sealed trait Pegs {
+abstract trait Pegs {
 
-  def apply(colour:String) = colour match{
-    case "Black"  => BlackPeg
-    case "White" => WhitePeg
-  }
+  val colour: String
 
 }
 
