@@ -16,7 +16,7 @@ class SecretCodeImpl(codeSize: Int) extends SecretCode {
     var s = ""
     val vc = ValidColoursImpl.allColours
     
-    for(a <- 0 to codeSize) {  
+    for(a <- 0 to codeSize - 1) {  
       val r = new Random(System.currentTimeMillis())
       val values = vc.values.toArray
       s = s + values(r.nextInt(values.size)).asInstanceOf[Colours].code
@@ -29,7 +29,7 @@ class SecretCodeImpl(codeSize: Int) extends SecretCode {
   override def toString = {
     var s: String = ""
     for(i <- 0 to theCode.colours.length - 1){
-      s = s + theCode.colours(i) + " "
+      s = s + theCode.colours(i).desc + " "
     }
     s
   }
