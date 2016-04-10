@@ -8,6 +8,8 @@ This is a scala implementation of the popular mastermind game.
 
 For a full description of how the game works, please see: https://en.wikipedia.org/wiki/Mastermind_%28board_game%29
 
+To to increase code size and add new colour - see beans.xml
+
 This project requires STB to run and the following library dependencies:
 
 *commoms-logging-1.2.jar
