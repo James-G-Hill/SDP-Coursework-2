@@ -6,7 +6,7 @@
      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     
     <bean id="codeSize" class="java.lang.Integer">
-        <property name="size" value="4"</property>
+        <constructor-arg index="0" value="4" />
     </bean>
     
     <bean id="A" class="Classes.Colours">
