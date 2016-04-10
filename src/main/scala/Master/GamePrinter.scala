@@ -1,6 +1,7 @@
 package Master
 
 import Classes.Colours
+import collection.JavaConversions._
 import Traits.{ValidColours, Board}
 
 class GamePrinter(codesize: Int, validColours: ValidColours) {
@@ -10,7 +11,7 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
       "This is a text version of the classic board game Mastermind.\n" +
       "The computer will think of a secret code.\n" +
       "The code consists of " + codesize + " colored pegs.\n" +
-      "The pegs may be one of " + validColours.allColours.length + " colors:" + colourList + "\n" +
+      "The pegs may be one of " + validColours.allColours.size + " colors:" + colourList + "\n" +
       "A color may appear more than once in the code.\n\n" +
       "You try to guess what colored pegs are in the code and what order they are in\n" +
       "After making a guess the result will be displayed.\n" +
@@ -25,7 +26,7 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
   def colourList = {
     var s = ""
     
-    for(colour: Colours <- validColours.allColours){
+    for(colour: Colours <- validColours.allColours.values){
       s = s + " " + colour.desc + ","
     }
   }
