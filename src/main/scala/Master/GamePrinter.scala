@@ -63,13 +63,15 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
         output = output + pegArray(i).toString
         output = output + "\n"
       } else {
-        output = output + "....\n"
+        output = output + ". . . .\n"
       }
     }
+    
+    output
   }
 
   def wrong(board : Board, turn: Int) = {
-    "You have " + (board.size - turn) + "guesses left\n\n"
+    "You have " + (board.size - turn) + " guesses left\n\n"
   }
 
   def loser = {
