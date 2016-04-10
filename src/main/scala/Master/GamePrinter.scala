@@ -24,10 +24,9 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
       
   def colourList = {
     var s = ""
-    var colour: Colours = null
-
-    for(colour  <-  validColours.allColours){
-      s = s + " " + colour.description + ","
+    
+    for(colour: Colours <- validColours.allColours){
+      s = s + " " + colour.desc + ","
     }
   }
 
