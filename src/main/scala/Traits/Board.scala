@@ -26,6 +26,7 @@ class BoardImpl extends Board {
   override def addRow(guess: Guesses, p: PegSet) = {
     colourArray(currentRow) = guess
     pegArray(currentRow) = p
+    currentRow = currentRow + 1
   }
   
   override def getBoard() = {}
