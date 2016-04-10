@@ -51,17 +51,19 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
 
   def printBoard (board : Board, turn: Int) = {
     
+    var output = ""
+    
     val colourArray = board.colourArray
-    val output = ""
     val pegArray = board.pegArray
     
-    for(i <- 0 to board.size){
-      if (turn >= i){
-        output + colourArray(i).toString
-        output + " Result: " +
-        output + pegArray(i).toString
+    for(i <- 0 to board.size - 1){
+      if (i <= turn){
+        output = output + colourArray(i).getGuess.toString
+        output = output + " Result: "
+        output = output + pegArray(i).toString
+        output = output + "\n"
       } else {
-        output + "....\n"
+        output = output + "....\n"
       }
     }
   }
