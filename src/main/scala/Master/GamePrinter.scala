@@ -20,7 +20,7 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
       "For each peg in the guess that is the correct color, but is out of position, you get a white peg.\n\n" +
       "Only the first letter of the color is displayed. B for Blue, R for Red, and so forth.\n" +
       "When entering guesses you only need to enter the first character of the color as a capital letter.\n\n" +
-      "You have 12 to guess the answer or you lose the game. \n" +
+      "You have 12 turns to guess the answer or you lose the game. \n" +
       "Generating secret code ....\n\n"
       
   def colourList = {
@@ -42,7 +42,7 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
   def getGuess = {
     "What is your next guess?\n" +
     "Type in the characters for your guess and press enter.\n" +
-    "Enter guess:"
+    "Enter guess:\n"
   }
 
   def codePrint (code:String) = {
@@ -66,7 +66,7 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
         output = output + ". . . .\n"
       }
     }
-    
+    output = output + "\n"
     output
   }
 
@@ -75,13 +75,11 @@ class GamePrinter(codesize: Int, validColours: ValidColours) {
   }
 
   def loser = {
-    "You did not solve the puzzle. Too bad.\n" +
-    "Enter Y for another game or anything else to quit: n"
+    "You did not solve the puzzle. Too bad.\n"
   }
 
   def winner = {
-    "You solved the puzzle! Good job.\n" +
-    "Enter Y for another game or anything else to quit: k\n"
+    "You solved the puzzle! Good job.\n"
   }
 
 }
