@@ -64,10 +64,10 @@ class NewGame(showCode: Boolean) extends GameAbstractImpl {
         
       } else {
         
-        print(printer.wrong(board, turn))
         turn = turn + 1
+        print(printer.wrong(board, turn))
         
-        if(turn > board.size) {
+        if(turn >= board.size) {
           finished = true
           print(printer.loser)
         }
