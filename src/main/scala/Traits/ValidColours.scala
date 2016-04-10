@@ -25,7 +25,6 @@ object ValidColoursImpl extends ValidColours {
   }
   
   def getColours(char: Char): Colours = {
-    println("index is " + char)
     allColours get char.toString
   }
   
